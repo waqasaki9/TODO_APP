@@ -9,10 +9,11 @@
  */
 import { useState, useEffect, useCallback, useRef } from 'react';
 
-// WebSocket URL - adjust for production
-const WS_URL = import.meta.env.PROD 
-  ? `wss://${window.location.host}/ws/chat`
-  : 'ws://localhost:8000/ws/chat';
+// Resolve API and WS base URLs from env
+const API_BASE = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? window.location.origin : 'http://localhost:8000');
+const WS_BASE = import.meta.env.VITE_WS_URL || API_BASE.replace(/^http/, 'ws');
+// Final WebSocket URL
+const WS_URL = `${WS_BASE}/ws/chat`;
 
 /**
  * Connection states
