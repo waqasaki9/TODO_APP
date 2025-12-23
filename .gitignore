@@ -1,0 +1,45 @@
+# Ignore Python cache and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Environment files
+.env
+.env.local
+backend/.env
+backend/.env.*
+frontend/.env
+frontend/.env.*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ChromaDB
+backend/chroma_db/
+
+# Node modules
+frontend/node_modules/
+
+# Build outputs
+frontend/dist/
+build/
+*.egg-info/
+
+# Vite/Frontend caches
+frontend/.vite/
+frontend/.cache/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

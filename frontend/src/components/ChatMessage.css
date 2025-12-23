@@ -1,0 +1,132 @@
+/* Chat Message Styles */
+
+.chat-message {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  border-radius: var(--border-radius);
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.chat-message.user {
+  background-color: var(--primary-color);
+  color: white;
+  margin-left: 48px;
+}
+
+.chat-message.assistant {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  margin-right: 48px;
+}
+
+.chat-message.error {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: var(--error-color);
+  margin-right: 48px;
+}
+
+.message-avatar {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.message-content-wrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.message-sender {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.chat-message.user .message-sender {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.message-time {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.message-content {
+  font-size: 15px;
+  line-height: 1.6;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* Streaming Message */
+.chat-message.streaming {
+  border-color: var(--primary-color);
+  border-style: dashed;
+}
+
+.typing-indicator {
+  display: inline-flex;
+  gap: 4px;
+  margin-left: 8px;
+}
+
+.typing-indicator span {
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chat-message.user {
+    margin-left: 24px;
+  }
+  
+  .chat-message.assistant,
+  .chat-message.error {
+    margin-right: 24px;
+  }
+}
