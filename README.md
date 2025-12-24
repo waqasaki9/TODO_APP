@@ -2,7 +2,13 @@
 
 A small project I built to manage todos with a friendly chat UI. You can type things like add buy milk or show my tasks and the agent will figure it out. Under the hood it uses FastAPI, React, a LangGraph agent, PostgreSQL, and ChromaDB for semantic search. It's simple to run locally and easy to tweak.
 
-GitHub: https://github.com/WAQASAKI/TODO_APP
+GitHub: https://github.com/waqasaki9/TODO_APP
+
+## Deployment
+
+Deployed on render
+front end url: https://todo-app-1-rngz.onrender.com/
+
 
 ## What's Inside
 
@@ -11,6 +17,7 @@ GitHub: https://github.com/WAQASAKI/TODO_APP
 - PostgreSQL for storing todos (async SQLAlchemy)
 - ChromaDB for semantic search (RAG)
 - React + Vite frontend with live updates
+- Deployed on render
 
 ## Quick Start (Windows)
 
